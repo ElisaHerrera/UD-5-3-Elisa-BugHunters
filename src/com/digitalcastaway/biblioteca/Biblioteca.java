@@ -10,11 +10,11 @@ public class Biblioteca {
 
     public Biblioteca(String name) {
         this.name = name;
-        this.catalogoLibros = new ArrayList<String>(Arrays.stream(Catalogo.libros).toList());
+        this.catalogoLibros = new ArrayList<Integer>(Arrays.stream(Catalogo.libros).toList());
     }
 
     public void showCatalog() {
-        Iterator<String> it = catalogoLibros.iterator();
+        Iterator<Integer> it = catalogoLibros.iterator();
         System.out.println("################################");
         System.out.println("# Mostrando catálogo de libros #");
         System.out.println("################################");
@@ -27,16 +27,16 @@ public class Biblioteca {
         }
     }
 
-    public String prestarLibro(int posicion) {
+    public Integer prestarLibro(int posicion) {
         return catalogoLibros.remove(posicion);
     }
 
-    public String prestarLibroAleatorio() {
+    public Integer prestarLibroAleatorio() {
         int posicionAleatoria = (int) (Math.random() * this.catalogoLibros.size());
         return prestarLibro(posicionAleatoria);
     }
 
     public void devolverLibro(String titulo) {
-        catalogoLibros.add(titulo);
+        catalogoLibros.add(Integer.valueOf(titulo));
     }
 }
