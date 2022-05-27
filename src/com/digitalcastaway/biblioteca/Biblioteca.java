@@ -10,7 +10,7 @@ public class Biblioteca {
 
     public Biblioteca(String name) {
         this.name = name;
-        this.catalogoLibros = new ArrayList<Integer>(Arrays.stream(Catalogo.libros).toList());
+        this.catalogoLibros = new ArrayList<Integer>(Arrays.stream(catalogoLibros).toList());
     }
 
     public void showCatalog() {
